@@ -1,10 +1,9 @@
 <template name="mainLayout">
-	<header>
-		<h1> My Workouts Book (main)</h1>
-		{{> loginButtons}}
-	</header>
+	{{> header}}
+	{{> sideNav}}
 	<main>
 		{{> Template.dynamic template=main}}
 	</main>
+	{{> footer}}
 </template>
 
