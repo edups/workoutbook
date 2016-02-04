@@ -2,7 +2,7 @@ Workouts = new Mongo.Collection('workouts');
 
 Workouts.allow({
 	insert: function(userId, doc){
-		//If user id exists
+		//If user id exists, them can insert
 		return !!userId;
 	}
 });

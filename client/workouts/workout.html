@@ -1,13 +1,14 @@
-<template name="singleWorkout">
-	<article class="singlework">
+<template name="soloWorkout">
+	<article class="solowork">
 		<h3>{{name}}</h3>
 		<p>{{desc}}</p>
 		<p>
 			{{#each exercises}}
 				<span class="exercise">
-					{{name}} - {{repetitions}}
+					Ejercicio: {{name}} - NºRepeticiones: {{repetitions}}
 				</span>
 			{{/each}}
 		</p>
+		<a href="/workout/{{_id}}">View Details</a>
 	</article>
 </template>

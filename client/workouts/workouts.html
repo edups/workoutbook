@@ -1,8 +1,13 @@
 <template name="workouts">
 	{{> newWorkout}}
 	<section class="workouts">
-		{{#each workouts}}
-			{{> singleWorkout}}
-		{{/each}}
+		{{#if Template.subscriptionsReady}}
+			{{#each workouts}}
+				{{> soloWorkout}}
+			{{/each}}
+		{{else}}
+			<p>Loading --- aqui añadir un spinner</p>	
+		{{/if}}
+
 	</section>
 </template>

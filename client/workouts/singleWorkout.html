@@ -1,0 +1,13 @@
+<template name="singleWorkout">
+	<h1>Esto corresponde al nombre: {{workout.name}}</h1>
+	<p>Esto corresponde a descripcion: {{workout.desc}}</p>
+	<p>Estos son los ejercicios:
+		{{#each workout.exercises}}
+					<span class="exercise">
+						Ejercicio: {{name}}  Número de repeticiones: {{repetitions}}
+					</span>
+		{{/each}}
+	</p>
+	<p>Este es el autor: {{workout.author}}</p> <!--Hay que ver como poner nombre el nombre-->
+	
+</template>

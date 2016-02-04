@@ -1,4 +1,11 @@
-Meteor.subscribe('workouts');
+//Meteor.subscribe('workouts');
+
+Template.workouts.onCreated(function(){
+	var vm = this;
+	vm.autorun(function(){
+		vm.subscribe('workouts');
+	});
+});
 
 //preparado para añadir Google Analytics
 //console.log(Meteor.settings.public.ga.account);
