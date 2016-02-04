@@ -1,0 +1,13 @@
+<template name="singleWorkout">
+	<article class="singlework">
+		<h3>{{name}}</h3>
+		<p>{{desc}}</p>
+		<p>
+			{{#each exercises}}
+				<span class="exercise">
+					{{name}} - {{repetitions}}
+				</span>
+			{{/each}}
+		</p>
+	</article>
+</template>

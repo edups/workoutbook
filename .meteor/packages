@@ -19,7 +19,8 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 kadira:flow-router
 kadira:blaze-layout
 erasaur:meteor-lodash
-stolinski:stylus-multi
+#stolinski:stylus-multi
+materialize:materialize
 fortawesome:fontawesome
 spiderable
 fastclick
