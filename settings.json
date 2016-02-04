@@ -1,0 +1,9 @@
+/*Preaparado para Google Analytics*/
+{
+	"public":{
+		"ga":{
+			"account": "UA-XXXXX-X"
+		}
+	}
+	
+}
