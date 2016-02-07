@@ -1,14 +1,30 @@
 <template name="soloWorkout">
-	<article class="solowork">
+	<!-- añadimos una clase para que sea visual si se encuentra entre la rutina-->
+	<article class="solowork {{#if inRutine}}in-rutine{{/if}}">
 		<h3>{{name}}</h3>
-		<p>{{desc}}</p>
-		<p>
-			{{#each exercises}}
-				<span class="exercise">
-					Ejercicio: {{name}} - NºRepeticiones: {{repetitions}}
-				</span>
-			{{/each}}
-		</p>
-		<a href="/workout/{{_id}}">View Details</a>
+		<!--{{#if $.Session.get 'editMode'}} PAra session al utilizar reactive var se cambia-->
+		{{#if editMode}}
+		<!--Hay que crear un helper para retornar el valor de este id hay que quitar las comillas del id pq es un helper-->
+			{{>quickForm collection="Workouts" id=updateWorkoutId type="update" doc=this autosave=true}}
+		{{else}}
+			<p>{{desc}}</p>
+			<p>
+				{{#each exercises}}
+					<p class="exercise">
+						Ejercicio: {{name}} - NºRepeticiones: {{repetitions}}
+					</p>
+				{{/each}}
+			</p>
+			<a href="/workout/{{_id}}">View Details</a>
+			{{#if inRutine}}
+				<button class="btn-deny toggle-rutine">Remove from Rutine</button>
+			{{else}}
+				<button class="btn-primary toggle-rutine">Add to Rutine</button>
+			{{/if}}	
+		{{/if}}
+		<i class="fa fa-pencil"></i>
+		<i class="fa fa-trash"></i>
+		
+		
 	</article>
 </template>

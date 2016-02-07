@@ -12,3 +12,21 @@ header, main, footer {
         padding-left: 0;
       }
     }
+
+
+.btn-primary,.btn-deny{
+	display: block;
+}   
+
+.in-rutine{
+	background-color: lightblue;
+}
+.solowork{
+	border: 2px dotted tomato;
+	margin:5px;
+	
+}
+.new-workout-container{
+	border: 2px double teal;
+	margin-left:10%;
+}

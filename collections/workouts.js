@@ -4,6 +4,9 @@ Workouts.allow({
 	insert: function(userId, doc){
 		//If user id exists, them can insert
 		return !!userId;
+	},
+	update: function(userId, doc){
+		return !!userId;
 	}
 });
 
@@ -57,6 +60,23 @@ WorkoutSchema = new SimpleSchema({
 		autoform:{
 			type: "hidden"
 		}
+	}
+});
+
+//METODOS
+Meteor.methods({
+	//Cambiar si se encuentra en rutina o no
+	toggleRutineItem: function(id, currentState){
+		//Actualizamos el objeto cuya Id le pasamos.Cambiando el valor por defecto inRutine(false) 
+		//Ahora hay que pasarlo en workout.js
+		Workouts.update(id,{
+			$set:{
+				inRutine: !currentState
+			}
+		})
+	},
+	deleteWorkout:function(id){
+		Workouts.remove(id);
 	}
 });
 

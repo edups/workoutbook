@@ -1,0 +1,21 @@
+<template name="rutine">
+	<h1>Mi actual rutina</h1>
+	<!--Lo que iteramos por el each es el objeto del rutine.js-->
+	{{#each workouts}}
+		{{>rutineItem}}
+	{{else}}
+		<p>Añade algunos <a href="/workout-book">ejercicios</a> a tu actual rutina</p>	
+	{{/each}}	
+</template>
+
+<template name="rutineItem">
+	<div class="rutine-item">
+		<h3>{{name}}</h3>
+		<p>{{desc}}</p>
+		{{#each exercises}}
+			<p class="exercise" style="font-weight:bolder;">
+				{{name}}  Nº reps: {{repetitions}}
+			</p>
+		{{/each}}	
+	</div>
+</template>

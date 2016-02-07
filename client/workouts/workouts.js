@@ -17,3 +17,9 @@ Template.workouts.helpers({
 		return Workouts.find({});
 	}
 });
+
+Template.workouts.events({
+	'click .new-workout' : function(){
+		Session.set('newWorkout',true);
+	}
+});

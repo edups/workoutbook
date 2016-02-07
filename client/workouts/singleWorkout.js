@@ -1,7 +1,8 @@
 Template.singleWorkout.onCreated(function(){
 	var vm = this;
 	vm.autorun(function(){
-		vm.subscribe('workouts');
+		var id= FlowRouter.getParam('id');
+		vm.subscribe('singleWorkout',id);
 	});
 });
 
