@@ -1,0 +1,41 @@
+<template name="userprof">
+	<h3>ESto es la pagina del perfil</h3>
+	<ul>
+		{{#each userInCollection}}
+			{{#if services.twitter}}
+				<p>Este perfil pertenece a conexión mediante Twitter</p>
+				<li>USER ID -> {{_id}}</li>
+				<li>Nombre usuario ->{{profile.name}} (@{{services.twitter.screenName}})</li>
+				<img src="{{services.twitter.profile_image_url}}">
+				<li>Fecha creación cuenta -> {{createdAt}}</li>
+
+				{{else}}
+				{{#if services.facebook}}
+						<p>Este perfil pertenece a conexión mediante Facebook</p>
+						<li>USER ID -> {{_id}}</li>
+						<li>Nombre usuario ->{{profile.name}}</li>
+						<!--http://stackoverflow.com/questions/15018552/how-to-query-a-facebook-user-picture-via-meteors-accounts-facebook-->
+						<img src="http://graph.facebook.com/{{services.facebook.id}}/picture/?type=small">
+						<li>Fecha creación cuenta -> {{createdAt}}</li>
+
+						{{else}}
+						{{#if services.google}}
+								<p>Este perfil pertenece a conexión mediante Google</p>
+								<li>USER ID -> {{_id}}</li>
+								<li>Nombre usuario ->{{profile.name}}</li>
+								<!-- http://stackoverflow.com/questions/18826790/meteor-shortcut-to-get-the-profile-picture-for-the-currently-logged-in-user-reg -->
+								<img src="{{services.google.picture}}">
+								<li>Fecha creación cuenta -> {{createdAt}}</li>
+
+				
+							{{else}}
+							<p>Este perfil no es de Twitter</p>
+							<li>USER ID -> {{_id}}</li>
+							<li>Email usuario -> {{emails.[0].address}}</li>
+							<li>Fecha creación cuenta -> {{createdAt}}</li>
+						{{/if}}
+				{{/if}}
+			{{/if}}		
+		{{/each}}
+	</ul>
+</template>

@@ -38,3 +38,9 @@ check
 sacha:spin
 reactive-var
 
+accounts-twitter
+accounts-facebook
+accounts-google
+
+http
+
