@@ -1,5 +1,5 @@
 <template name="userprof">
-	<h3>ESto es la pagina del perfil</h3>
+	<h3>Perfil</h3>
 	<ul>
 		{{#each userInCollection}}
 			{{#if services.twitter}}
@@ -29,7 +29,7 @@
 
 				
 							{{else}}
-							<p>Este perfil no es de Twitter</p>
+							<p>Este perfil pertenece a la Colección propia</p>
 							<li>USER ID -> {{_id}}</li>
 							<li>Email usuario -> {{emails.[0].address}}</li>
 							<li>Fecha creación cuenta -> {{createdAt}}</li>

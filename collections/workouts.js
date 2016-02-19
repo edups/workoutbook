@@ -73,10 +73,15 @@ Meteor.methods({
 			$set:{
 				inRutine: !currentState
 			}
+
 		})
+			//Cambiar mensaje para añadido a rutinasale tanto al agregar como eliminar hay que mirar si hacer 2 botones o que
+			Bert.alert( '¡ Añadida/Eliminada *CAMBIAR ESTO*!', 'success', 'growl-top-right','fa-thumbs-o-up' );
+
 	},
 	deleteWorkout:function(id){
 		Workouts.remove(id);
+		Bert.alert( '¡ Eliminado!', 'success', 'growl-top-right','fa-thumbs-o-up' );
 	}
 });
 

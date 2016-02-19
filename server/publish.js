@@ -10,5 +10,9 @@ Meteor.publish('singleWorkout',function(id){
 });
 
 Meteor.publish('users',function(){
+	//Solo el actual usuario
 	return Meteor.users.find(this.userId);
+	//Comprobar toda la colleccion de usuarios (SOLO PARA COMPROBAR)
+	// return Meteor.users.find();
+
 });
