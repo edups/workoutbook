@@ -25,7 +25,7 @@ PicWorkout.allow({
     return true;
   }, 
   remove: function (userId, doc) {
-     return !!userId;
+     return true;
   }
 });
 
@@ -44,7 +44,8 @@ Exercise = new SimpleSchema({
           autoform: {
                afFieldInput: {
                     type: 'fileUpload',
-                    collection: 'picworkout'
+                    collection: 'picworkout',
+                    label: 'Choose file'
                }
           }
       }

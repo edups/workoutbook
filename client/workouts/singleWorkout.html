@@ -6,6 +6,17 @@
 					<span class="exercise">
 						Ejercicio: {{name}}  Número de repeticiones: {{repetitions}}
 					</span>
+					{{#if picture}}
+						
+
+						<p>Imagen Ejercicio:
+						Nombre de la foto{{picture}}</p>
+						<a href="/cfs/files/picworkout/{{picture}}" target="_blank">
+							<img src="/cfs/files/picworkout/{{picture}}" alt="" class="img-fileUpload-thumbnail img-thumbnail img-rounded center-block">
+						</a>
+						
+			
+						{{/if}}
 		{{/each}}
 	</p>
 	<p>Este es el autor: {{workout.author}}</p> <!--Hay que ver como poner nombre el nombre-->

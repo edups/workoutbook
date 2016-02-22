@@ -25,7 +25,7 @@ Template.soloWorkout.helpers({
 		return Template.instance().editMode.get();
 	},
 	picworkout: function(){
-		return PicWorkout.find();
+		return PicWorkout.findOne(this._id);
 	}
 });
 
