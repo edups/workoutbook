@@ -1,0 +1,75 @@
+<template name="insertInfoForm">
+{{> quickForm collection="CustomerInfo" id="insertInfoForm" type="insert"}}
+{{> afFieldInput name="profilePic"}}
+
+ <!-- {{#autoForm collection="CustomerInfo" id="insertInfoForm" type="insert"}}
+ 	<div class="form-group">
+ 		{{> afFieldInput name="userId" type="hidden"}}
+ 	</div>
+ 	<div class="form-group {{#if afFieldIsInvalid name='firstName'}} has-error{{/if}}">
+ 		<label for="" class="control-label">{{afFieldLabelText name='firstName'}}</label>
+ 		{{> afFieldInput name='firstName'}}
+ 		{{#if afFieldIsInvalid name='firstName'}}
+ 		<span class="help-block">{{{adFieldMessage name='firstName'}}}</span>
+ 		{{/if}}
+ 	</div>
+ 	<div class="form-group {{#if afFieldIsInvalid name='middleName'}} has-error{{/if}}">
+ 		<label for="" class="control-label">{{afFieldLabelText name='middleName'}}</label>
+ 		{{> afFieldInput name='middleName'}}
+ 		{{#if afFieldIsInvalid name='middleName'}}
+ 		<span class="help-block">{{{adFieldMessage name='middleName'}}}</span>
+ 		{{/if}}
+ 	</div>
+ 	<div class="form-group {{#if afFieldIsInvalid name='lastName'}} has-error{{/if}}">
+ 		<label for="" class="control-label">{{afFieldLabelText name='lastName'}}</label>
+ 		{{> afFieldInput name='lastName'}}
+ 		{{#if afFieldIsInvalid name='lastName'}}
+ 		<span class="help-block">{{{adFieldMessage name='lastName'}}}</span>
+ 		{{/if}}
+ 	</div>
+	<div class="form-group {{#if afFieldIsInvalid name='contactNo'}} has-error{{/if}}">
+ 		<label for="" class="control-label">{{afFieldLabelText name='contactNo'}}</label>
+ 		{{> afFieldInput name='contactNo'}}
+ 		{{#if afFieldIsInvalid name='contactNo'}}
+ 		<span class="help-block">{{{adFieldMessage name='contactNo'}}}</span>
+ 		{{/if}}
+ 	</div>
+ 	<div class="form-group">
+ 	
+ 		{{> afFieldInput name='status' type="hidden"}}
+ 	
+ 	</div>
+ 		{{> afFieldInput name="profilePic" id="prueba"}}
+ 	<div class="form-group">
+ 		<button type="submit" class="btn btn-primary">Save</button>
+ 		<button type="reset" class="btn btn-primary">Reset</button>
+ 	
+ 	
+ 	</div>
+ 	{{/autoForm}}
+
+-->
+ 
+    
+
+  
+<div>
+<p>Aqui deben de salir las imagenes </p>
+	{{#each profilePic}}
+     <img alt="{{this.name}}" src="{{this.url}}">
+{{/each}}
+</div>
+<div class="imageView">
+<p>Aqui abajo las imagenes</p>
+    {{#each images}}
+      <div>
+        <a href="{{this.url}}" target="_blank"><img src="{{this.url}}" alt="" class="thumbnail" /></a>
+      </div>
+    {{/each}}
+  </div>
+  
+</template>
+
+<template name="updateInfoForm">
+  {{> quickForm collection="CustomerInfo" doc=this id="updateInfoForm" type="update"}}
+</template>

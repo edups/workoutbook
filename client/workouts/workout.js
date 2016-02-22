@@ -1,3 +1,11 @@
+Template.soloWorkout.onCreated(function(){
+	var vm = this;
+	vm.autorun(function(){
+		vm.subscribe('picworkout');
+		});
+});
+
+
 //REactive vars
 Template.soloWorkout.onCreated(function(){
 	this.editMode =  new ReactiveVar(false);
@@ -5,6 +13,7 @@ Template.soloWorkout.onCreated(function(){
 	//this.editMode = new ReactiveVar();
 	//this.editMode.set(false);
 });
+
 
 //Devuelve el id para modificar-update  mediante el quickform(workout.html)
 Template.soloWorkout.helpers({
@@ -14,6 +23,9 @@ Template.soloWorkout.helpers({
 	editMode: function(){
 		//edit mode solo se reflja como scope en el template que estamos clickeando a diferencia de sesion que es para todo
 		return Template.instance().editMode.get();
+	},
+	picworkout: function(){
+		return PicWorkout.find();
 	}
 });
 

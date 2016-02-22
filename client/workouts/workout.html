@@ -5,7 +5,7 @@
 		<!--{{#if $.Session.get 'editMode'}} PAra session al utilizar reactive var se cambia-->
 		{{#if editMode}}
 		<!--Hay que crear un helper para retornar el valor de este id hay que quitar las comillas del id pq es un helper-->
-			{{>quickForm collection="Workouts" id=updateWorkoutId type="update" doc=this autosave=true}}
+			{{>quickForm collection="Workouts" id=updateWorkoutId type="update" doc=this autosave=false}}
 		{{else}}
 			<p>{{desc}}</p>
 			<p>
@@ -13,6 +13,20 @@
 					<p class="exercise">
 						Ejercicio: {{name}} - NºRepeticiones: {{repetitions}}
 					</p>
+					<div class="imageExercise">
+						<p>Imagen Ejercicio:
+						Nombre de la foto{{picture}}</p>
+							
+     			
+     					
+     					
+						{{#each picworkout}}
+							nombre original {{original.name}}					
+      					<div>
+       					 <a href="{{this.url}}" target="_blank"><img src="{{this.url}}" alt="" class="thumbnail" />nombre {{this.name}}</a>
+      						</div> 
+    					{{/each}}
+					</div>
 				{{/each}}
 			</p>
 			<a href="/workout/{{_id}}">View Details</a>

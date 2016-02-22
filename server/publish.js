@@ -16,3 +16,23 @@ Meteor.publish('users',function(){
 	// return Meteor.users.find();
 
 });
+Meteor.publish('picworkout', function() {
+  return PicWorkout.find();
+});
+
+//TEst upload  
+Meteor.publish("fileUploads", function () {
+    //console.log("publishing fileUploads");
+    return Workoutimage.find();
+  });
+
+//TEst upload  
+Meteor.publish("formtest", function () {
+    //console.log("publishing fileUploads");
+    return CustomerInfo.find();
+  });
+
+Meteor.publish('images', function() {
+  return Images.find();
+});
+

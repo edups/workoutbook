@@ -20,7 +20,7 @@ kadira:flow-router
 kadira:blaze-layout
 erasaur:meteor-lodash
 #stolinski:stylus-multi
-materialize:materialize
+#materialize:materialize
 fortawesome:fontawesome
 spiderable
 fastclick
@@ -44,4 +44,12 @@ accounts-google
 
 http
 themeteorchef:bert
+
+cfs:filesystem  #Este es de test para la subida de imagenes,da fallo en subidas no locales
+cfs:standard-packages
+cfs:gridfs
+
+yogiben:autoform-file
+
+
 

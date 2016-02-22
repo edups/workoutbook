@@ -30,3 +30,7 @@ header, main, footer {
 	border: 2px double teal;
 	margin-left:10%;
 }
+.thumbnail{
+	width:100px;
+	heigth:100px;
+}

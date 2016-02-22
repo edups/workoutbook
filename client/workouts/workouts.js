@@ -4,7 +4,8 @@ Template.workouts.onCreated(function(){
 	var vm = this;
 	vm.autorun(function(){
 		vm.subscribe('workouts');
-	});
+		vm.subscribe('picworkout');
+		});
 });
 
 //preparado para añadir Google Analytics
@@ -16,6 +17,8 @@ Template.workouts.helpers({
 	workouts: ()=>{
 		return Workouts.find({});
 	}
+	
+
 });
 
 Template.workouts.events({

@@ -10,13 +10,44 @@ Workouts.allow({
 	}
 });
 
+PicWorkout = new FS.Collection("picworkout", {
+  stores: [new FS.Store.GridFS("picworkout", {path: "../../../../../picworkoutFiles"})]
+});
+
+PicWorkout.allow({
+  insert: function(userId, doc) {
+    return true;
+  },
+  update: function(userId, doc, fieldNames, modifier) {
+    return true;
+  },
+  download: function(userId) {
+    return true;
+  }, 
+  remove: function (userId, doc) {
+     return !!userId;
+  }
+});
+
+
 Exercise = new SimpleSchema({
 	name:{
 		type: String
 	},
 	repetitions:{
 		type: Number
-	}
+	},
+	picture: {
+          type: String,
+          label: 'Exercise Picture',
+          optional: true,
+          autoform: {
+               afFieldInput: {
+                    type: 'fileUpload',
+                    collection: 'picworkout'
+               }
+          }
+      }
 });
 
 WorkoutSchema = new SimpleSchema({
@@ -61,6 +92,7 @@ WorkoutSchema = new SimpleSchema({
 			type: "hidden"
 		}
 	}
+     
 });
 
 //METODOS
@@ -86,3 +118,121 @@ Meteor.methods({
 });
 
 Workouts.attachSchema(WorkoutSchema);
+
+
+
+//ZONA DE TESTEO 
+//TEST UPLOAD
+
+Workoutimage = new FS.Collection("workoutimage", {
+  stores: [new FS.Store.FileSystem("workoutimage", {path: "../../../../../meteor_uploads"})]
+  
+
+});
+Workoutimage.allow({
+  insert: function (userId, doc) {
+  return !!userId;
+  },
+  update: function (userId, doc) {
+   return !!userId;
+  },
+  remove: function (userId, doc) {
+     return !!userId;
+  },
+  download: function (userId, doc) {
+    return true;
+  }
+});
+
+
+//TEST UPLOAD IN FORM
+
+
+Images = new FS.Collection("images", {
+  stores: [new FS.Store.GridFS("images", {path: "../../../../../meteor_images"})]
+});
+
+Images.allow({
+  insert: function(userId, doc) {
+    return true;
+  },
+  update: function(userId, doc, fieldNames, modifier) {
+    return true;
+  },
+  download: function(userId) {
+    return true;
+  }, 
+  remove: function (userId, doc) {
+     return !!userId;
+  }
+});
+
+Test = new SimpleSchema({
+	name:{
+		type: String
+	},
+	repetitions:{
+		type: Number
+	},
+      Pic: {
+          type: String,
+          label: 'Pictest',
+          autoform: {
+               afFieldInput: {
+                    type: 'fileUpload',
+                    collection: 'Images'
+               }
+          }
+     }
+});
+
+customer = new SimpleSchema({
+     userId: {
+          type: String,
+          unique: true,
+          autoValue: function () {
+               return Meteor.userId()
+          }
+     },
+     firstName: {
+          type: String
+     },
+     middleName: {
+          type: String,
+          optional:true
+     },
+     lastName: {
+          type: String
+     },
+     contactNo: {
+          type: Number
+     },
+     status: {
+          type: String,
+          autoValue: function () {
+               return 'Verification Pending'
+          }
+     },
+     address: {
+          type: String,
+          optional: true,
+          max: 2000,
+          autoform: {
+               rows: 10
+          }
+     },
+	test:{
+		type:[Test]
+	}
+});
+CustomerInfo = new Mongo.Collection('customerInfo');
+CustomerInfo.allow({
+	insert: function(userId, doc){
+		//If user id exists, them can insert
+		return !!userId;
+	},
+	update: function(userId, doc){
+		return !!userId;
+	}
+});
+CustomerInfo.attachSchema(customer);

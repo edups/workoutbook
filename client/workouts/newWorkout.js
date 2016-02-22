@@ -3,3 +3,4 @@ Template.newWorkout.events({
 		Session.set('newWorkout',false);
 	}
 });
+
