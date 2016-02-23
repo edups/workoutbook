@@ -14,20 +14,25 @@
 	<div class="rutine-item">
 		<h3 class="title-rutine-item">{{name}}</h3>
 		<div class="exercise">
-		<p>{{desc}}</p>
-		{{#each exercises}}
-			<p>Exercise: {{name}}</p>
-			<p>Repetitions: {{repetitions}}	</p>
-			{{#if picture}}
+			<div class="text">
+				<p>{{desc}}</p>
+					{{#each exercises}}
+					<p>Exercise: {{name}}</p>
+					<p>Repetitions: {{repetitions}}	</p>
+						{{#if picture}}
 			
-				<p>Sample image: </p>
-					<a href="/cfs/files/picworkout/{{picture}}" target="_blank" class="link-img">
-							<img src="/cfs/files/picworkout/{{picture}}" alt="" class="img-fileUpload-thumbnail img-thumbnail img-rounded">
-					</a>
-						
-			
-			{{/if}}
-		{{/each}}
+						<p>Sample image: 
+							<a href="/cfs/files/picworkout/{{picture}}" target="_blank" class="link-img">
+								<img src="/cfs/files/picworkout/{{picture}}" alt="" class="img-fileUpload-thumbnail img-thumbnail img-rounded">
+							</a>
+						</p>	
+
+						{{/if}}
+					{{/each}}
+			</div>
+			<div class="preview">
+				<p>Here goes preview image</p>
+			</div>		
 		</div>	
 	</div>
 </template>

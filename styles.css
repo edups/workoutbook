@@ -353,7 +353,7 @@ button.btn-deny:hover {
 }
 
 .solo-work:hover,
- .rutine-item{
+ .rutine-item:hover,.profile:hover{
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
@@ -377,4 +377,17 @@ button.btn-deny:hover {
 	text-align: center;
 	font-size: 2em;
 	text-transform:uppercase;
+}
+.exercise{
+	width:100%;
+	box-sizing: border-box;
+}
+
+.rutine-item .text{
+	width: 40%;
+	float:left;
+}
+.rutine-item .preview{
+	width:60%;
+	float:left;
 }
