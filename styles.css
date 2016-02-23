@@ -272,7 +272,9 @@ textarea {
 	margin-top:20px;
 }
 
-.solo-work,.rutine-item{ 
+.solo-work,
+.rutine-item,
+.profile{
 	width:90%;
 	margin: 20px auto;
 	background: #fff;
@@ -283,7 +285,9 @@ textarea {
 	transition: all 0.3s ease;
 
 }
-.solo-work .fa-trash,.solo-work .fa-pencil,.view {
+.solo-work .fa-trash,
+.solo-work .fa-pencil,
+.view {
 	opacity: 0.3;
 	cursor: pointer;
 	position: absolute;
@@ -308,7 +312,8 @@ textarea {
 	color: #CD0000;
 	opacity: 0.6;
 }
-.solo-work .fa-pencil:hover,.view:hover{
+.solo-work .fa-pencil:hover,
+.view:hover{
 	color: #1ABC9C;
 	opacity: 0.6;
 }
@@ -318,7 +323,8 @@ textarea {
 	color: #fff;
 }
 
-.solo-work button.btn-primary.toggle-rutine,.solo-work button.btn-deny.toggle-rutine{
+.solo-work button.btn-primary.toggle-rutine,
+.solo-work button.btn-deny.toggle-rutine{
 	margin-top: 20px;
 }
 
@@ -331,25 +337,44 @@ button.btn-deny:hover {
 	background: #d13737;
 	border-color: #d13737;
 }
-.title-solo-work,.title-rutine-item{
+.title-solo-work,
+.title-rutine-item{
 	font-size: 2em;
 	text-transform: uppercase;
 	opacity: 0.3;
 	border-bottom: rgba(0,0,0,0.3) solid 3px;
 }
 
-.solo-work .exercise,.rutine-item .exercise{
+.solo-work .exercise,
+.rutine-item .exercise{
 	display: inline-block;
 	margin-right: 10px;
 	font-size: 1.2em;
 }
 
-.solo-work:hover, .rutine-item{
+.solo-work:hover,
+ .rutine-item{
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
-}
+
 
 .img-fileUpload-thumbnail{
 	width:50%;
 	height:50%
+}
+#title-routine{
+	text-align: center;
+	text-decoration: underline;
+	text-transform:uppercase;
+	font-size: 2em;
+	color: #354B60;
+}
+.title-rutine-item-b{
+	text-align: center;
+	font-size: 1.8em;
+}
+.not-found{
+	text-align: center;
+	font-size: 2em;
+	text-transform:uppercase;
 }

@@ -1,5 +1,6 @@
 <template name="userprof">
-	<h3>Perfil</h3>
+	<div class="profile">
+	<h3>Profile</h3>
 	<ul>
 		{{#each userInCollection}}
 			{{#if services.twitter}}
@@ -29,6 +30,7 @@
 
 				
 							{{else}}
+							<li>Name : {{username}}</li>
 							<p>Este perfil pertenece a la Colección propia</p>
 							<li>USER ID -> {{_id}}</li>
 							<li>Email usuario -> {{emails.[0].address}}</li>
@@ -38,4 +40,5 @@
 			{{/if}}		
 		{{/each}}
 	</ul>
+	</div>
 </template>
