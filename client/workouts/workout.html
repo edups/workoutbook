@@ -1,25 +1,26 @@
 <template name="soloWorkout">
 	<!-- añadimos una clase para que sea visual si se encuentra entre la rutina-->
-	<article class="solowork {{#if inRutine}}in-rutine{{/if}}">
-		<h3>{{name}}</h3>
+	<article class="solo-work {{#if inRutine}}in-rutine{{/if}}">
+		<h3 class="title-solo-work">{{name}}</h3>
 		<!--{{#if $.Session.get 'editMode'}} PAra session al utilizar reactive var se cambia-->
 		{{#if editMode}}
 		<!--Hay que crear un helper para retornar el valor de este id hay que quitar las comillas del id pq es un helper-->
 			{{>quickForm collection="Workouts" id=updateWorkoutId type="update" doc=this autosave=true}}
 		{{else}}
+		<div class="exercise">
 			<p>{{desc}}</p>
-			<p>
+			<div>
 				{{#each exercises}}
-					<p class="exercise">
-						Ejercicio: {{name}} - NºRepeticiones: {{repetitions}}
-					</p>
+					
+						<p>Exercise: {{name}}</p>
+						<p>Repetitions: {{repetitions}}	</p>
+					
 					<div class="imageExercise">
 						
 						{{#if picture}}
 						
 
-						<p>Imagen Ejercicio:
-						Nombre de la foto{{picture}}</p>
+						<p>Sample image: </p>
 						<a href="/cfs/files/picworkout/{{picture}}" target="_blank">
 							<img src="/cfs/files/picworkout/{{picture}}" alt="" class="img-fileUpload-thumbnail img-thumbnail img-rounded">
 						</a>
@@ -35,17 +36,17 @@
     					{{/each}}-->
 					</div>
 				{{/each}}
-			</p>
-			<a href="/workout/{{_id}}">View Details</a>
+				<a href="/workout/{{_id}}" class="view"><i class="fa fa-eye"></i></a>
+			</div>
 			{{#if inRutine}}
 				<button class="btn-deny toggle-rutine">Remove from Rutine</button>
 			{{else}}
 				<button class="btn-primary toggle-rutine">Add to Rutine</button>
 			{{/if}}	
+		</div>
 		{{/if}}
 		<i class="fa fa-pencil"></i>
 		<i class="fa fa-trash"></i>
-		
 		
 	</article>
 </template>

@@ -48,7 +48,7 @@ html {
 
 body {
 	background: #eee;
-	
+	position: relative;
 }
 
 header {
@@ -86,12 +86,10 @@ header .login-buttons-dropdown-align- #login-dropdown-list a {
 #login-dropdown-list{
 	background-color:#eee!important;
 }
-#login-buttons-password{
+.login-button{
 	background-color: #1ABC9C!important;		
 }
-p {
-	color: #333;
-}
+
 .billboard {
 	background: #1ABC9C;
 	color: #fff;
@@ -100,17 +98,258 @@ p {
 	padding: 60px;
 }
 
+
 footer{
 	color: #fff;
 	background: #354B60;
 	width: 100%;
-	height: 80px;
+	height: 60px;
 	position:fixed;
 	bottom:0;
 	left:0;
 	text-align:center;
+	z-index: 7;
 }
 footer p{
 	color: #fff;
 	
+}
+
+.side-nav {
+	position:fixed;
+	top: 80px;
+	left:0;
+	height: 100%;
+	width: 180px;
+	overflow: hidden;
+	/*background: #BDC3C7;*/
+	background: #517698;
+	color: #fff;
+	z-index: 6;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	
+}
+
+.side-nav ul {
+	display: block;
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+.side-nav a {
+	color: #fff;
+	text-decoration: none;
+	padding: 20px 20px;
+	display: block;
+	text-align: center;
+	transition: all 0.3s ease;
+}
+
+.side-nav a:hover,
+.side-nav a.active {
+	/*background: #1ABC9C;*/
+	background: #354B60;
+	border-left:8px solid #1ABC9C;
+	box-sizing:border-box;
+	
+}
+
+.side-nav i {
+	display: block;
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+
+.main-layout {
+	margin-left: 180px;
+	margin-top: 80px;
+	position:absolute;
+	width:90%;
+	padding-bottom:60px; /* ALtura del footer */
+	
+
+}
+.new-workout {
+	margin: 20px;
+}
+
+.new-workout-container {
+	position: relative;
+	background: #fff;
+	padding: 20px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	width:80%;
+	margin: auto;
+
+}
+.new-workout-container .fa-close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 20px;
+	font-size:1.5em;
+	cursor:pointer;
+}
+.new-workout-container .fa-close:hover{
+	color:#CD0000;
+}
+
+.new-workout-container label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.new-workout-container textarea,
+.new-workout-container input {
+	width: 100%;
+}
+
+.btn,
+button {
+	display: inline-block;
+	cursor: pointer;
+	background: #eee;
+	color: black;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 5px 15px;
+	border-radius: 18px;
+	font-weight: 600;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transition: all 0.3s ease;
+	border: solid 3px #eee;
+}
+
+.btn:hover,
+button:hover,.autoform-remove-item.btn:hover,.autoform-add-item.btn:hover{
+	background: #5ab0b0;
+	border: solid 3px #5ab0b0;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+button[type="submit"],.new-workout{
+	background-color:#82d8d8;
+	border: solid 3px #82d8d8;
+}
+
+.list-group {
+	list-style: none;
+	padding: 0;
+}
+
+input,
+select,
+textarea {
+	color: #354B60;
+	background: #fff;
+	border: 2px solid #eee;
+	border-radius: 2px;
+	font-weight: 600;
+	width: 100%;
+	padding: 6px 10px;
+	margin-bottom: 10px;
+}
+
+
+.autoform-remove-item.btn {
+	background: #eee;
+	box-shadow: none;
+	border-radius: 50%;
+	font-size: 1em;
+	height: 25px;
+	width: 25px;
+	text-align: center;
+	display: block;
+	padding: 0;
+}
+
+.autoform-add-item.btn {
+	width: 100%;
+	border-radius: 0;
+	box-shadow: none;
+	background: #eee;
+	margin-top:20px;
+}
+
+.solo-work,.rutine-item{ 
+	width:90%;
+	margin: 20px auto;
+	background: #fff;
+	padding: 20px 20px;
+	position: relative;
+	z-index: 1;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transition: all 0.3s ease;
+
+}
+.solo-work .fa-trash,.solo-work .fa-pencil,.view {
+	opacity: 0.3;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 1.6em;
+	display: block;
+	padding: 20px;
+	color: #222;
+	transition: all 0.3s ease;
+}
+.solo-work .fa-pencil {
+	right: 1.6em;
+}
+
+.view{
+	top:-0.3em;
+	right: 2.8em;
+}
+
+.solo-work .fa-trash:hover {
+	color: #CD0000;
+	opacity: 0.6;
+}
+.solo-work .fa-pencil:hover,.view:hover{
+	color: #1ABC9C;
+	opacity: 0.6;
+}
+
+.in-rutine{
+	background: #67A7E0;
+	color: #fff;
+}
+
+.solo-work button.btn-primary.toggle-rutine,.solo-work button.btn-deny.toggle-rutine{
+	margin-top: 20px;
+}
+
+button.btn-deny {
+	background: #e54b4b;
+	border: solid 3px #e54b4b;
+}
+
+button.btn-deny:hover {
+	background: #d13737;
+	border-color: #d13737;
+}
+.title-solo-work,.title-rutine-item{
+	font-size: 2em;
+	text-transform: uppercase;
+	opacity: 0.3;
+	border-bottom: rgba(0,0,0,0.3) solid 3px;
+}
+
+.solo-work .exercise,.rutine-item .exercise{
+	display: inline-block;
+	margin-right: 10px;
+	font-size: 1.2em;
+}
+
+.solo-work:hover, .rutine-item{
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+}
+
+.img-fileUpload-thumbnail{
+	width:50%;
+	height:50%
 }

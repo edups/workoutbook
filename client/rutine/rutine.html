@@ -1,32 +1,32 @@
 <template name="rutine">
-	<h1>Mi actual rutina</h1>
+	<h2>Current routine</h2>
 	
 	<!--Lo que iteramos por el each es el objeto del rutine.js-->
 	{{#each workouts}}
 		{{>rutineItem}}
 	{{else}}
-		<p>Añade algunos <a href="/workout-book">ejercicios</a> a tu actual rutina</p>	
+		<h3>Añade algunos <a href="/workout-book">ejercicios</a> a tu actual rutina</h3>	
 	{{/each}}	
 </template>
 
 <template name="rutineItem">
 	<div class="rutine-item">
-		<h3>{{name}}</h3>
+		<h3 class="title-rutine-item">{{name}}</h3>
+		<div class="exercise">
 		<p>{{desc}}</p>
 		{{#each exercises}}
-			<p class="exercise" style="font-weight:bolder;">
-				{{name}}  Nº reps: {{repetitions}}
-			</p>
+			<p>Exercise: {{name}}</p>
+			<p>Repetitions: {{repetitions}}	</p>
 			{{#if picture}}
 			
-				<p>Imagen Ejercicio:
-					Nombre de la foto{{picture}}</p>
-					<a href="/cfs/files/picworkout/{{picture}}" target="_blank">
+				<p>Sample image: </p>
+					<a href="/cfs/files/picworkout/{{picture}}" target="_blank" class="link-img">
 							<img src="/cfs/files/picworkout/{{picture}}" alt="" class="img-fileUpload-thumbnail img-thumbnail img-rounded">
 					</a>
 						
 			
 			{{/if}}
-		{{/each}}	
+		{{/each}}
+		</div>	
 	</div>
 </template>
