@@ -13,13 +13,15 @@ Meteor.publish('users',function(){
 	//Solo el actual usuario
 	return Meteor.users.find(this.userId);
 	//Comprobar toda la colleccion de usuarios (SOLO PARA COMPROBAR)
-	// return Meteor.users.find();
+	//return Meteor.users.find();
 
 });
 Meteor.publish('picworkout', function() {
   return PicWorkout.find();
 });
 
+
+/*
 //TEst upload  
 Meteor.publish("fileUploads", function () {
     //console.log("publishing fileUploads");
@@ -35,4 +37,4 @@ Meteor.publish("formtest", function () {
 Meteor.publish('images', function() {
   return Images.find();
 });
-
+*/

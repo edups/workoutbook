@@ -1,3 +1,4 @@
+/*
 Meteor.subscribe("fileUploads");
   Template.fileList.helpers({
     theFiles: function () {
@@ -34,6 +35,6 @@ Meteor.subscribe("fileUploads");
       });
     }
   });
-
+*/
 
  

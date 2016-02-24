@@ -1,15 +1,16 @@
 <template name="userprof">
 	<div class="profile">
 	<h3>Profile</h3>
+	<br/>
 	<ul>
 		{{#each userInCollection}}
 			{{#if services.twitter}}
 				<h4>Twitter Profile <i class="fa fa-twitter"></i></h4>
-				<br/>
+				
 				<li>User Name: {{profile.name}} (@{{services.twitter.screenName}})</li>
 				<li>User Id: {{_id}}</li>
 				<img src="{{services.twitter.profile_image_url}}">
-				<li>FCreated at : {{createdAt}}</li>
+				<li>Created at : {{createdAt}}</li>
 
 				{{else}}
 				{{#if services.facebook}}
@@ -19,6 +20,7 @@
 						<li>User Id: {{_id}}</li>
 						<!--http://stackoverflow.com/questions/15018552/how-to-query-a-facebook-user-picture-via-meteors-accounts-facebook-->
 						<img src="http://graph.facebook.com/{{services.facebook.id}}/picture/?type=small">
+						<li>User e-mail: {{services.facebook.email}}</li>
 						<li>Created at : {{createdAt}}</li>
 
 						{{else}}
@@ -29,6 +31,7 @@
 								<li>User Id: {{_id}}</li>
 								<!-- http://stackoverflow.com/questions/18826790/meteor-shortcut-to-get-the-profile-picture-for-the-currently-logged-in-user-reg -->
 								<img src="{{services.google.picture}}">
+								<li>User e-mail: {{services.google.email}}</li>
 								<li>Created at : {{createdAt}}</li>
 
 				

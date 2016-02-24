@@ -1,3 +1,4 @@
+/*
 Meteor.subscribe("formtest");
 Meteor.subscribe("images");
 
@@ -28,3 +29,4 @@ Template.insertInfoForm.events({
       });
     }
   });
+  */

@@ -1,3 +1,4 @@
+/*
 Template.modale.events({  
   'click button.modal': function(event, cosa) {
     var name = cosa.$(event.target).data('modalTemplate');
@@ -11,3 +12,4 @@ Template.modal.helpers({
     return Session.get('activeModal');
   }
 });
+*/

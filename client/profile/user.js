@@ -9,4 +9,5 @@ Template.userprof.helpers({
 	userInCollection: ()=>{
 		return Meteor.users.find();
 	}
+	
 });

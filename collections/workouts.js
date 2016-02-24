@@ -124,7 +124,7 @@ Workouts.attachSchema(WorkoutSchema);
 
 //ZONA DE TESTEO 
 //TEST UPLOAD
-
+/*
 Workoutimage = new FS.Collection("workoutimage", {
   stores: [new FS.Store.FileSystem("workoutimage", {path: "../../../../../meteor_uploads"})]
   
@@ -237,3 +237,4 @@ CustomerInfo.allow({
 	}
 });
 CustomerInfo.attachSchema(customer);
+*/
