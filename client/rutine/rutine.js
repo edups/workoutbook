@@ -11,7 +11,7 @@ Template.rutine.helpers({
 	}
 });
 
-Template.cosa.helpers({
+Template.miModal.helpers({
 
 	nombre: ()=>{
 		return Session.get('imageName');
@@ -22,16 +22,16 @@ Template.cosa.helpers({
 
 
 Template.rutineItem.events({
-	'click button.modali': function(event,cosa){
+	'click .modali': function(event,cosa){
 		var name= cosa.$(event.target).data('modalNombre');
-		
+		//console.log('te tocao');
 		Session.set('imageName',name);
 	}
 });
 
-Template.cosa.events({
-	'click button.close': function(){
-		console.log('te chapao');
+Template.miModal.events({
+	'click .fa-close': function(){
+		
 		Session.set('imageName',null);
 	}
 });

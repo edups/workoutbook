@@ -1,40 +1,7 @@
-/* CSS declarations go here */
-/*main{
-	width:70%;
+*{
+	margin:0;
+	padding: 0;
 }
-
-header, main, footer {
-      padding-left: 240px;
-    }
-
-@media only screen and (max-width : 992px) {
-      header, main, footer {
-        padding-left: 0;
-      }
-    }
-
-
-.btn-primary,.btn-deny{
-	display: block;
-}   
-
-.in-rutine{
-	background-color: lightblue;
-}
-.solowork{
-	border: 2px dotted tomato;
-	margin:5px;
-	
-}
-.new-workout-container{
-	border: 2px double teal;
-	margin-left:10%;
-}
-.thumbnail{
-	width:200px;
-	height:200px;
-}
-*/
 
 html {
 	box-sizing: border-box;
@@ -192,7 +159,15 @@ footer p{
 	font-size:1.5em;
 	cursor:pointer;
 }
-.new-workout-container .fa-close:hover{
+.preview .fa-close{
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 5px;
+	font-size:2em;
+	cursor:pointer;
+}
+.new-workout-container .fa-close:hover, .preview .fa-close:hover{
 	color:#CD0000;
 }
 
@@ -275,7 +250,7 @@ textarea {
 
 .solo-work,
 .rutine-item,
-.profile{
+.profile,.exerciseId{
 	width:90%;
 	margin: 20px auto;
 	background: #fff;
@@ -286,6 +261,16 @@ textarea {
 	transition: all 0.3s ease;
 
 }
+.exerciseId{
+	color: #354B60;
+	font-size: 1.2em;
+	line-height: 1.8em;
+}
+.profile ul{
+	list-style: none;
+	font-size: 1.2em;
+}
+
 .solo-work .fa-trash,
 .solo-work .fa-pencil,
 .view {
@@ -354,7 +339,7 @@ button.btn-deny:hover {
 }
 
 .solo-work:hover,
- .rutine-item:hover,.profile:hover{
+ .rutine-item:hover,.profile:hover, .exerciseId:hover{
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
@@ -389,16 +374,41 @@ button.btn-deny:hover {
 	float:left;
 }*/
 .preview{
-	width:75%;
+	/*width:75%;
 	height:90%;
-	background-color: tomato;
+	background-color: transparent;
+	border: 2px solid blue, 4px solid orange;
 	position: absolute;
 	top: 3%;
 	left:12%;
-	z-index:100;
+	z-index:100;*/
+	
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 500px;
+   height: 500px;
+   margin-top: -250px; /* Half the height */
+   margin-left: -250px; /* Half the width */
+   z-index:100;
+  /* resize: both;
+   overflow: auto;*/
 }
 
 .preview img{
-	width:100%;
-	height:100%;
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border: 2em solid #fff;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.12), 0 2px 9px rgba(0,0,0,0.24);
+	-webkit-border-radius: 8px;
+	        border-radius: 8px;
+	
+}
+.modali{
+	color: #517698;
+	cursor:pointer;
+}
+.modali:hover{
+	color:#354B60;
 }

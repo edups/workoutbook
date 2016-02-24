@@ -1,24 +1,34 @@
 <template name="singleWorkout">
-	<h1>Esto corresponde al nombre: {{workout.name}}</h1>
-	<p>Esto corresponde a descripcion: {{workout.desc}}</p>
-	<p>Estos son los ejercicios:
-		{{#each workout.exercises}}
-					<span class="exercise">
-						Ejercicio: {{name}}  Número de repeticiones: {{repetitions}}
-					</span>
-					{{#if picture}}
+	
+	<div class="exerciseId">
+		<h3>View of exercise name: {{workout.name}}</h3>
+		<p>Id: {{workout._id}}</p>
+		<p>Description: {{workout.desc}}</p>
+		<p>Author: {{workout.author}}</p>
+		<p>Exercises:</p>
+		
+			<div>
+				{{#each workout.exercises}}
+					
+						<p>Exercise: {{name}}</p>
+						<p>Repetitions: {{repetitions}}	</p>
+					
+					<div class="imageExercise">
 						
-
-						<p>Imagen Ejercicio:
-						Nombre de la foto{{picture}}</p>
+						{{#if picture}}
+						<p>Sample image:
 						<a href="/cfs/files/picworkout/{{picture}}" target="_blank">
-							<img src="/cfs/files/picworkout/{{picture}}" alt="" class="img-fileUpload-thumbnail img-thumbnail img-rounded center-block">
+							<img src="/cfs/files/picworkout/{{picture}}" alt="" class="img-fileUpload-thumbnail img-thumbnail img-rounded">
 						</a>
-						
-			
+						</p>
+				
 						{{/if}}
-		{{/each}}
-	</p>
-	<p>Este es el autor: {{workout.author}}</p> <!--Hay que ver como poner nombre el nombre-->
+
+					</div>
+				{{/each}}
+				
+			</div>
+			
+		</div>	
 	
 </template>

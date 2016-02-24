@@ -9,7 +9,7 @@
 		<h3 class="title-rutine-item-b">
 		Please, add some <a href="/workout-book">exercises</a> to your current routine.</h3>	
 	{{/each}}
-	{{> cosa}}	
+	{{> miModal}}	
 </template>
 
 <template name="rutineItem">
@@ -24,10 +24,11 @@
 						{{#if picture}}
 			
 						<p>Sample image: 
-							<a href="/cfs/files/picworkout/{{picture}}" target="_blank" class="link-img">
+							<!--<a href="/cfs/files/picworkout/{{picture}}" target="_blank" class="link-img">-->
 								<img src="/cfs/files/picworkout/{{picture}}" alt="" class="img-fileUpload-thumbnail img-thumbnail img-rounded">
-							</a>
-							<button class="modali" data-modal-nombre="{{picture}}">Modal foto</button>
+								<i class="fa fa-search  fa-lg modali" data-modal-nombre="{{picture}}"></i>
+
+							<!--<button class="modali" data-modal-nombre="{{picture}}">Modal foto</button>-->
 						</p>	
 
 						{{/if}}
@@ -40,11 +41,11 @@
 </template>
 
 
-<template name="cosa">
+<template name="miModal">
 			{{#if nombre}}
 				<div class="preview">
+					<i class="fa fa-close"></i>
 					<img src="/cfs/files/picworkout/{{nombre}}" alt="" class="">
-					<button class="close">Cerrar</button>
 				</div>	
 			{{/if}}	
 
