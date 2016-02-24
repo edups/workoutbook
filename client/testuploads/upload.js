@@ -4,7 +4,7 @@ Meteor.subscribe("fileUploads");
       return Workoutimage.find();
     },
      images: function () {
-    return Workoutimage.find(); // Where Images is an FS.Collection instance
+    return Workoutimage.find(); //  Images is an FS.Collection instance
   }
   });
 

@@ -4,10 +4,12 @@
 	<!--Lo que iteramos por el each es el objeto del rutine.js-->
 	{{#each workouts}}
 		{{>rutineItem}}
+		
 	{{else}}
 		<h3 class="title-rutine-item-b">
 		Please, add some <a href="/workout-book">exercises</a> to your current routine.</h3>	
-	{{/each}}	
+	{{/each}}
+	{{> cosa}}	
 </template>
 
 <template name="rutineItem">
@@ -25,14 +27,25 @@
 							<a href="/cfs/files/picworkout/{{picture}}" target="_blank" class="link-img">
 								<img src="/cfs/files/picworkout/{{picture}}" alt="" class="img-fileUpload-thumbnail img-thumbnail img-rounded">
 							</a>
+							<button class="modali" data-modal-nombre="{{picture}}">Modal foto</button>
 						</p>	
 
 						{{/if}}
 					{{/each}}
 			</div>
-			<div class="preview">
-				<p>Here goes preview image</p>
-			</div>		
+			
+			
 		</div>	
 	</div>
+</template>
+
+
+<template name="cosa">
+			{{#if nombre}}
+				<div class="preview">
+					<img src="/cfs/files/picworkout/{{nombre}}" alt="" class="">
+					<button class="close">Cerrar</button>
+				</div>	
+			{{/if}}	
+
 </template>

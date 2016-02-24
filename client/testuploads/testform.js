@@ -12,12 +12,12 @@ Meteor.subscribe("images");
 
 Template.insertInfoForm.events({
     'change .js-af-select-file': function (event, template) {
-      console.log("te clickado...")
+      //console.log("te clickado...")
       FS.Utility.eachFile(event, function (file) {
-        console.log("each file...");
+        //console.log("each file...");
         var yourFile = new FS.File(file);
         Image.insert(yourFile, function (err, fileObj) {
-          console.log("callback for the insert, err: ", err);
+          //console.log("callback for the insert, err: ", err);
           if (!err) {
             console.log("inserted without error");
           }
