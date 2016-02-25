@@ -383,7 +383,7 @@ button.btn-deny:hover {
 	left:12%;
 	z-index:100;*/
 	
-   position: absolute;
+   position: fixed;
    top: 50%;
    left: 50%;
    width: 500px;
