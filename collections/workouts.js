@@ -118,7 +118,16 @@ Meteor.methods({
 
 Workouts.attachSchema(WorkoutSchema);
 
+Messages = new Meteor.Collection('messages');
 
+Messages.allow({
+  insert: function(userId, doc) {
+    return true;
+  },
+  update: function(userId, doc, fieldNames, modifier) {
+    return true;
+  }
+});
 
 //ZONA DE TESTEO 
 //TEST UPLOAD

@@ -20,7 +20,9 @@ Meteor.publish('picworkout', function() {
   return PicWorkout.find();
 });
 
-
+Meteor.publish('message',function(){
+	return Messages.find();
+});
 /*
 //TEst upload  
 Meteor.publish("fileUploads", function () {
