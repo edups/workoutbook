@@ -412,3 +412,26 @@ button.btn-deny:hover {
 .modali:hover{
 	color:#354B60;
 }
+
+#chat{
+	position:relative;
+	margin: 5px;
+	height:100%;
+	overflow: hidden;
+	
+	
+}
+#input{
+	position: fixed;
+    bottom: 60px;
+    left:25%;
+    overflow-y:scroll;
+}
+.date{
+	font-size: 0.9em;
+	color: grey;
+	opacity:0.5;
+}
+input#message{
+	border-radius: 20px;
+}
