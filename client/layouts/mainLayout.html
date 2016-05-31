@@ -1,9 +1,17 @@
 <template name="mainLayout">
 	{{> header}}
-	{{> sideNav}}
-	<main class="main-layout">
-		{{> Template.dynamic template=main}}
-	</main>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2">
+				{{> sideNav}}
+			</div>
+			<div class="col-md-10">
+				<main class="main-layout">
+					{{> Template.dynamic template=main}}
+				</main>
+			</div>
+		</div>
+	</div>
 	{{> footer}}
 </template>
 

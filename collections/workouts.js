@@ -82,6 +82,20 @@ WorkoutSchema = new SimpleSchema({
 			type: "hidden"
 		}
 	},
+  alias:{
+    type: String,
+    label: "alias",
+    autoValue: function(){
+      if (Meteor.user().username)
+             return Meteor.user().username;
+          else
+            return Meteor.user().emails[0].address;
+    },
+    autoform:{
+      type: "hidden"
+    }
+
+  },
 	createdAt:{
 		type: Date,
 		label: "Created At",
@@ -100,6 +114,7 @@ WorkoutSchema = new SimpleSchema({
 Meteor.methods({
 	//Cambiar si se encuentra en rutina o no
 	toggleRutineItem: function(id, currentState){
+    //check(Meteor.userId(), String);
 		//Actualizamos el objeto cuya Id le pasamos.Cambiando el valor por defecto inRutine(false) 
 		//Ahora hay que pasarlo en workout.js
 		Workouts.update(id,{
@@ -111,6 +126,7 @@ Meteor.methods({
 			
 	},
 	deleteWorkout:function(id){
+   // check(Meteor.userId(), String);
 		Workouts.remove(id);
 		Bert.alert( '¡ Deleted!', 'success', 'growl-top-right','fa-thumbs-o-up' );
 	}
@@ -119,15 +135,31 @@ Meteor.methods({
 Workouts.attachSchema(WorkoutSchema);
 
 Messages = new Meteor.Collection('messages');
+WorkoutSchema = new SimpleSchema({
+  name:{
+    type: String,
+    label: "Name"
+  },
+  message:{
+    type: String,
+    label:"Message"
+  },
+  time:{
+    type: Date,
+    label: "Time"
+  }
+});
 
 Messages.allow({
   insert: function(userId, doc) {
-    return true;
-  },
-  update: function(userId, doc, fieldNames, modifier) {
-    return true;
+    return !!userId
   }
 });
+
+
+
+
+
 
 //ZONA DE TESTEO 
 //TEST UPLOAD

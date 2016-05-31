@@ -20,6 +20,7 @@ kadira:flow-router
 kadira:blaze-layout
 erasaur:meteor-lodash
 #stolinski:stylus-multi
+twbs:bootstrap
 #materialize:materialize
 fortawesome:fontawesome
 spiderable
@@ -51,3 +52,8 @@ cfs:gridfs
 
 yogiben:autoform-file
 
+mrt:facebook-sdk #SDK facebook
+mrt:twit
+
+
+audit-argument-checks

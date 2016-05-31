@@ -3,6 +3,15 @@ Template.rutine.onCreated(function(){
 	vm.autorun(function(){
 		vm.subscribe('workouts');
 	});
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1309821952378208',
+      status     : true,
+      xfbml      : true
+    });
+  };
+
 });
 
 Template.rutine.helpers({

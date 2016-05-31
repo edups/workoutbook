@@ -1,3 +1,13 @@
+if(Meteor.isClient) {
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1309821952378208',
+      status     : true,
+      xfbml      : true
+    });
+  };
+}
+
 Template.messages.onCreated(function(){
   var vm = this;
   vm.autorun(function(){
@@ -7,7 +17,7 @@ Template.messages.onCreated(function(){
 
 Template.messages.helpers({
      messages: function() {
-        return Messages.find({}, { sort: { time: +1}});
+        return Messages.find({}, { sort: { time: +1}, limit: 15});
       }
  });
 
@@ -30,5 +40,11 @@ Template.messages.helpers({
             message.value = '';
           }
         }
-      }
+      },
+
+   
     }
+  
+
+
+
