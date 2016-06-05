@@ -1,33 +1,58 @@
 <template name="singleWorkout">
-	
-	<div class="exerciseId">
-		<h3>View of exercise name: {{workout.name}}</h3>
-		<p>Description: {{workout.desc}}</p>
-		<p>Author: {{workout.alias}}</p>
-		<p>Exercises:</p>
+	<div class="col-md-offset-2 col-md-10 col-sm-12">
+		<div class="exerciseId">
+		<h3>{{workout.name}}</h3>
+		<p class="separator"></p>
+		<p class="desc">Description: </p>
+		<p>{{workout.desc}}</p>
+		<p class="desc">Author:</p> 
+		<p>{{workout.alias}}</p>
+		<p class="desc">Exercises:</p>
 		
-			<div>
+			<div class="exercisesView">
 				{{#each workout.exercises}}
 					
-						<p>Exercise: {{name}}</p>
-						<p>Repetitions: {{repetitions}}	</p>
+						<p class="desc">Exercise:</p> 
+						<p>{{name}}</p>
+						<p class="desc">Repetitions: </p>
+						<p>{{repetitions}}	</p>
 					
 					<div class="imageExercise">
 						
 						{{#if picture}}
-						<p>Sample image:
-						<a href="/cfs/files/picworkout/{{picture}}" target="_blank">
-							<img src="/cfs/files/picworkout/{{picture}}" alt="" class="img-fileUpload-thumbnail img-thumbnail img-rounded">
-						</a>
+						<p class="desc">Sample image:</p>
+						<p class="imgPrev">
+							<img src="/cfs/files/picworkout/{{picture}}" alt="{{workout.desc}}}" class="img-fileUpload-thumbnail img-thumbnail img-rounded thumbnail" data-modal-nombre="{{picture}}" data-toggle="modal" data-target="#myModal">
 						</p>
-				
+
+						
 						{{/if}}
 
 					</div>
 				{{/each}}
 				
 			</div>
+
 			
-		</div>	
+		</div>
+				<!-- Modal -->
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog modal-lg" >
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						      </div>
+						      <div class="modal-body">
+						        <img class="modal-prev" src="/cfs/files/picworkout/{{nombre}}" alt="{{workout.desc}}}">
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default closepreview" data-dismiss="modal">Close</button>
+						      </div>
+						    </div>
+						  </div>
+						</div>	
+
 	
+			
+	</div>
 </template>

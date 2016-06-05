@@ -1,51 +1,52 @@
 <template name="userprof">
+	<div class="col-md-12 col-sm-10 col-sm-offset-2">
 	<div class="profile">
 	<h3>Profile</h3>
-	<br/>
+	<p class="separator"></p>
 	<ul>
 		{{#each userInCollection}}
 			{{#if services.twitter}}
 				<h4>Twitter Profile <i class="fa fa-twitter"></i></h4>
-				
-				<li>User Name: {{profile.name}} (@{{services.twitter.screenName}})</li>
-				<li>User Id: {{_id}}</li>
-				<img src="{{services.twitter.profile_image_url}}">
-				<li>Created at : {{createdAt}}</li>
+				<img src="{{services.twitter.profile_image_url}}" class="img-thumbnail">
+				<br/>
+				<li><span class="desc">Name/ScreenName: </span> {{profile.name}} (@{{services.twitter.screenName}})</li>
+				<li><span class="desc">Created at: </span> {{createdAt}}</li>
 
 				{{else}}
 				{{#if services.facebook}}
 						<h4>Facebook Profile <i class="fa fa-facebook-official"></i></h4>
-						<br/>
-						<li>User Name: {{profile.name}}</li>
-						<li>User Id: {{_id}}</li>
 						<!--http://stackoverflow.com/questions/15018552/how-to-query-a-facebook-user-picture-via-meteors-accounts-facebook-->
-						<img src="http://graph.facebook.com/{{services.facebook.id}}/picture/?type=small">
-						<li>User e-mail: {{services.facebook.email}}</li>
-						<li>Created at : {{createdAt}}</li>
+						<img src="http://graph.facebook.com/{{services.facebook.id}}/picture/?type=small" class="img-thumbnail">
+						<br/>
+						<li><span class="desc">Name :</span>{{profile.name}}</li>
+						
+						<li><span class="desc">E-mail: </span>{{services.facebook.email}}</li>
+						<li><span class="desc">Created at : </span>{{createdAt}}</li>
 
 						{{else}}
 						{{#if services.google}}
 								<h4>Google Profile <i class="fa fa-google-plus"></i></h4>
-								<br/>
-								<li>User Name: {{profile.name}}</li>
-								<li>User Id: {{_id}}</li>
 								<!-- http://stackoverflow.com/questions/18826790/meteor-shortcut-to-get-the-profile-picture-for-the-currently-logged-in-user-reg -->
-								<img src="{{services.google.picture}}">
-								<li>User e-mail: {{services.google.email}}</li>
-								<li>Created at : {{createdAt}}</li>
+								<img src="{{services.google.picture}}" class="img-thumbnail photo">
+								<br/>
+								<li><span class="desc">Name: </span> {{profile.name}}</li>
+								<li><span class="desc">E-mail: </span> {{services.google.email}}</li>
+								<li><span class="desc">Created at: </span> {{createdAt}}</li>
 
 				
 							{{else}}
 							<h4>Workoutbook Profile</h4>
+							<img src="/images/no_image.png" alt="no user img" class="img-thumbnail">
 							<br/>
-							<li>Name: {{username}}</li>
-							<li>USER id: {{_id}}</li>
-							<li>User e-mail: {{emails.[0].address}}</li>
-							<li>Created at : {{createdAt}}</li>
+							<br/>
+							<li><span class="desc">Name: </span>{{username}}</li>
+							<li><span class="desc">E-mail: </span> {{emails.[0].address}}</li>
+							<li><span class="desc">Created at: </span>{{createdAt}}</li>
 						{{/if}}
 				{{/if}}
 			{{/if}}		
 		{{/each}}
 	</ul>
+	</div>
 	</div>
 </template>

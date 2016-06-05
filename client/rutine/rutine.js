@@ -4,7 +4,10 @@ Template.rutine.onCreated(function(){
 		vm.subscribe('workouts');
 	});
 
-  window.fbAsyncInit = function() {
+
+});
+
+window.fbAsyncInit = function() {
     FB.init({
       appId      : '1309821952378208',
       status     : true,
@@ -12,35 +15,27 @@ Template.rutine.onCreated(function(){
     });
   };
 
-});
-
 Template.rutine.helpers({
 	workouts: ()=>{
 		return Workouts.find({inRutine: true});
 	}
-});
-
-Template.miModal.helpers({
-
-	nombre: ()=>{
-		return Session.get('imageName');
-	}
 	
 });
-
-
-
+Template.rutineItem.helpers({
+	nombre: ()=>{
+			return Session.get('imageName');
+		}
+});
 Template.rutineItem.events({
-	'click .modali': function(event,cosa){
+	'click .imgPrev': function(event,cosa){
 		var name= cosa.$(event.target).data('modalNombre');
 		//console.log('te tocao');
 		Session.set('imageName',name);
-	}
-});
+	},
 
-Template.miModal.events({
-	'click .fa-close': function(){
+	'click .closepreview, click .close': function(){
 		
 		Session.set('imageName',null);
 	}
 });
+

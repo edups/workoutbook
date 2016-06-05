@@ -1,15 +1,28 @@
 <template name="rutine">
-	<h2 id="title-routine">Current routine</h2>
+	<div class="col-md-12 col-sm-10 col-sm-offset-2">
+		<h2 id="title-routine">Current rutine</h2>
+		<br/>
+		<br/>
 	
-	<!--Lo que iteramos por el each es el objeto del rutine.js-->
-	{{#each workouts}}
-		{{>rutineItem}}
+		<!--Lo que iteramos por el each es el objeto del rutine.js-->
+		{{#each workouts}}
+			{{>rutineItem}}
+			
+		{{else}}
+			<div class="panel panel-warning">
+  				<div class="panel-heading">
+  				<h3 class="panel-title">Ops !</h3>
+  				</div>
+				<div class="panel-body">
+					<h3 class="title-rutine-item-b">Please, add some <a href="/workout-book">exercises</a> to your current routine.</h3>
+			 	</div>
+			</div>
+			
+		{{/each}}
 		
-	{{else}}
-		<h3 class="title-rutine-item-b">
-		Please, add some <a href="/workout-book">exercises</a> to your current routine.</h3>	
-	{{/each}}
-	{{> miModal}}	
+		
+	</div>	
+	
 </template>
 
 <template name="rutineItem">
@@ -17,37 +30,44 @@
 		<h3 class="title-rutine-item">{{name}}</h3>
 		<div class="exercise">
 			<div class="text">
-				<p>{{desc}}</p>
+				<p class="desc">{{desc}}</p>
 					{{#each exercises}}
-					<p>Exercise: {{name}}</p>
-					<p>Repetitions: {{repetitions}}	</p>
+					<p class="desc">Exercise: </p>
+					<p>{{name}}</p>
+					<p class="desc">Repetitions: </p>
+					<p>{{repetitions}}</p>
 						{{#if picture}}
 			
-						<p>Sample image: 
-							<!--<a href="/cfs/files/picworkout/{{picture}}" target="_blank" class="link-img">-->
-								<img src="/cfs/files/picworkout/{{picture}}" alt="" class="img-fileUpload-thumbnail img-thumbnail img-rounded">
-								<i class="fa fa-search  fa-lg modali" data-modal-nombre="{{picture}}"></i>
-
-							<!--<button class="modali" data-modal-nombre="{{picture}}">Modal foto</button>-->
-						</p>	
+						<p class="desc">Sample image:</p>
+						<p class="imgPrev">
+							<img src="/cfs/files/picworkout/{{picture}}" alt="{{workout.desc}}" class="img-fileUpload-thumbnail img-thumbnail img-rounded thumbnail" data-modal-nombre="{{picture}}" data-toggle="modal" data-target="#myModal">
+						</p>
 
 						{{/if}}
 					{{/each}}
-					<div class="fb-like" data-href="http://www.edups.esy.es" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+					
+						<div class="fb-like" data-href="http://www.edups.esy.es" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+					
 			</div>
 			
 			
 		</div>	
 	</div>
+		<!-- Modal -->
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog modal-sm" >
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						      </div>
+						      <div class="modal-body">
+						        <img class="modal-prev" src="/cfs/files/picworkout/{{nombre}}" alt="{{workout.desc}}}">
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default closepreview" data-dismiss="modal">Close</button>
+						      </div>
+						    </div>
+						  </div>
+						</div>	
 </template>
 
-
-<template name="miModal">
-			{{#if nombre}}
-				<div class="preview">
-					<i class="fa fa-close"></i>
-					<img src="/cfs/files/picworkout/{{nombre}}" alt="" class="">
-				</div>	
-			{{/if}}	
-
-</template>

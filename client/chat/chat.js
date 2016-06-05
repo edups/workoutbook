@@ -1,13 +1,3 @@
-if(Meteor.isClient) {
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1309821952378208',
-      status     : true,
-      xfbml      : true
-    });
-  };
-}
-
 Template.messages.onCreated(function(){
   var vm = this;
   vm.autorun(function(){
@@ -21,14 +11,19 @@ Template.messages.helpers({
       }
  });
 
-    Template.input.events = {
+    Template.input.events({
+
       'keydown input#message' : function (event) {
         if (event.which == 13) { // 13 is the enter key event
           if (Meteor.user().username)
              var name = Meteor.user().username;
           else
-            var name = Meteor.user().emails[0].address;
+            // var name = Meteor.user().emails[0].address;
+           var name = Meteor.user().profile.name;
+          // else
+          //   var name = Meteor.user().services.google.email;
             var message = document.getElementById('message');
+            console.log(message);
           if (message.value != '') {
             Messages.insert({
               name: name,
@@ -40,10 +35,8 @@ Template.messages.helpers({
             message.value = '';
           }
         }
-      },
-
-   
-    }
+      }
+   });
   
 
 

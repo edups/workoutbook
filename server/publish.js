@@ -32,6 +32,8 @@ Meteor.publish('message',function(){
         access_token_secret:  'yHfQJ9YG0X82dJRIITITAAQX7x7Rm4FGMJmf73AWOnkw4'
     });
 
+    
+
 
 //  Postear en twitter ... funciona ... 
 // T.post('statuses/update', { status: 'hello world!' }, function(err, data, response) {

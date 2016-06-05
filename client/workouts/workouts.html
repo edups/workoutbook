@@ -1,9 +1,9 @@
 <template name="workouts">
-	<!-- <div class="col-sm-10 col-md-10"> -->
+	<div class="col-sm-10 col-md-12 col-sm-offset-2">
 	{{#if $.Session.get 'newWorkout'}}
 		{{> newWorkout}}
 	{{else}}	
-		<button class="new-workout">New Workout</button>
+		<button class="btn new-workout">New Workout</button>
 	{{/if}}	
 	<section class="workouts">
 		{{#if Template.subscriptionsReady}}
@@ -16,5 +16,5 @@
 		{{/if}}
 
 	</section>
-<!-- 	</div> -->
+	</div>
 </template>

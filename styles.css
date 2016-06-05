@@ -11,7 +11,11 @@ body {
   background: #eee;
   margin-bottom: 40px;
 }
+/* HEADER */
 /*Nav-bar*/
+.navbar-header{
+	position: relative;
+}
 .navbar-fixed-top {
   border: 0;
   
@@ -22,8 +26,8 @@ body {
 .navbar-header a.navbar-brand:hover{
 	color:#1DB954;
 }
-/* Hide for desktop, show later */
-.mobileMenu {
+/* Hide and show for mobile resolotions */
+.mobileMenu, #lognav {
   display: none;
 }
 @media(max-width: 768px) {
@@ -31,7 +35,54 @@ body {
     display: block;
     text-align:center;
   }
+
 }
+
+@media(min-width:768px){
+	#lognav{
+		display:inline;
+	}
+}
+header #lognav{
+	position: fixed;
+	right:5px;
+	line-height: 3em;
+}
+/*header #lognav .login-buttons-dropdown-align- a, #mobLogin {
+	color: #fff;
+}*/
+header #lognav #login-sign-in-link{
+	color: #fff;
+}
+#lognav #login-buttons #login-dropdown-list {
+    position: relative;
+    top: -5px;
+    background:#eee;
+    color:#222;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+#lognav #login-dropdown-list{
+	overflow: hidden;
+}
+
+.login-button{
+	background-color: #1ABC9C!important;		
+}
+
+a#login-sign-in-link.login-link-text{
+	color:#9d9d9d;
+	text-decoration: none;
+}
+a#login-sign-in-link.login-link-text:hover{
+	color:#fff;
+}
+a.login-link-text#login-name-link{
+	color:#1DB954!important;
+}
+
 /*Footer*/
 footer{
 	color: #fff;
@@ -51,14 +102,30 @@ footer ul li{
 /*Home Layout*/
 
 .billboard {
-	background: #1ABC9C;
+	/*background: #1ABC9C;*/
+	background: url("/images/pexels-photo.jpg");
+	background-size: cover;
 	color: #fff;
 	text-align: center;
-	height:100%;
-	
+	min-height:250px;
+}
+.billboard .jumbotron{
+	margin-top:60px;
+	background: rgba(26, 188, 156,0.9);
+	/*opacity: 0.9;*/
+}
+#myCarousel{
+	transition: all 0.3s ease;
+}
+.carousel-inner.item{
+	transition: all 0.3s ease;
 	
 }
 
+.carousel-control{
+	-webkit-border-radius: 30px;
+	        border-radius: 30px;
+}
 .pulse {
     animation-name: pulse;
     animation-duration: 1s;
@@ -78,3 +145,281 @@ footer ul li{
         opacity: 0.7;
     }
 }
+
+.sect1,.sect2,.sect3{
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.3em;
+	
+}
+.sect2{
+	color: #fff;
+	background-color:#5B5757;
+	padding-bottom: 60px;
+}
+.separator{
+	margin: 40px 60px 20px;
+	border-bottom: 1px solid #1ABC9C;
+}
+.sect3 i{
+	padding:20px;
+}
+
+/* Side Nav */
+.side-nav {
+  display: none;
+}
+@media(min-width: 768px) {
+	 .side-nav {
+	 	display:block;
+		position:fixed;
+		/*top: 80px;*/
+		left:0;
+		height: 100%;
+		width:120px;
+		/*overflow: hidden;*/
+		background: #4F4F4F;
+		color: #fff;
+		z-index: 6;
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);	
+		font-size:1.1em;
+	}
+}
+.side-nav a {
+	color: #fff;
+	text-decoration: none;
+	padding: 20px 20px;
+	display: block;
+	text-align: center;
+	transition: all 0.2s ease;
+}
+.side-nav a:hover,.side-nav a.active {
+	/*background:  moradotn #7C25F8  verde #1DB954;*/
+	background: #222;
+	border-left:8px solid #1DB954 ;
+}
+/*NEw Workout*/
+.new-workout {
+	margin: 20px;
+}
+.new-workout-container {
+	position: relative;
+	background: #fff;
+	padding: 20px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	border-radius: 20px;
+}
+.new-workout-container .fa-close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 20px;
+	font-size:1.5em;
+	cursor:pointer;
+}
+.preview .fa-close{
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 5px;
+	font-size:2em;
+	cursor:pointer;
+}
+.new-workout-container .fa-close:hover, .preview .fa-close:hover{
+	color:#CD0000;
+}
+.new-workout-container .panel-heading{
+	background: #D0EFDA;
+	font-weight: bold;
+}
+.btn,button {
+	display: inline-block;
+	cursor: pointer;
+	background: #D0EFDA;
+	color: black;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 5px 15px;
+	border-radius: 18px;
+	font-weight: 550;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transition: all 0.3s ease;
+	border: solid 3px #D0EFDA;
+}
+.btn:hover,button:hover,.autoform-remove-item.btn:hover,.autoform-add-item.btn:hover, .new-workout:hover{
+	/*background: #5ab0b0;*/
+	color:#fff;
+	background: #1DB954;
+	border: solid 3px #1DB954;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+button[type="submit"],.new-workout{
+	background-color:#64C987;
+	border: solid 3px #64C987;
+}
+/* LIst of workouts */
+.solo-work,.rutine-item,.profile,.exerciseId{
+	width:90%;
+	margin: 20px auto;
+	background: #fff;
+	padding: 20px 20px;
+	position: relative;
+	z-index: 1;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transition: all 0.3s ease;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.solo-work .fa-trash,.solo-work .fa-pencil,.view {
+	opacity: 0.3;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 1.6em;
+	display: block;
+	padding: 20px;
+	color: #222;
+	transition: all 0.3s ease;
+}
+.solo-work .fa-pencil {
+	right: 1.6em;
+}
+
+.view{
+	top:-0.3em;
+	right: 2.8em;
+}
+
+.solo-work .fa-trash:hover {
+	color: #CD0000;
+	opacity: 0.6;
+}
+.solo-work .fa-pencil:hover,.view:hover{
+	color: #1DB954;
+	opacity: 0.6;
+}
+
+.in-rutine{
+	/*background: #67A7E0;*/
+	background: #BA90F9;
+	color: #fff;
+}
+.solo-work button.btn-primary.toggle-rutine,
+.solo-work button.btn-deny.toggle-rutine{
+	/*margin-top: 20px;*/
+	background-color:#64C987;
+	border: solid 3px #64C987;
+	float: right;
+	/*right:0px;*/
+}
+
+.solo-work button.btn-primary.toggle-rutine:hover,
+.solo-work button.btn-deny.toggle-rutine:hover{
+	background: #1DB954;
+	border: solid 3px #1DB954;
+}
+.title-solo-work,.title-rutine-item{
+	font-size: 2em;
+	text-transform: uppercase;
+	opacity: 0.3;
+	border-bottom: rgba(0,0,0,0.3) solid 3px;
+}
+.solo-work .exercise,.rutine-item .exercise{
+	font-size: 1.0em;
+}
+
+.solo-work:hover, .rutine-item:hover,.profile:hover, .exerciseId:hover{
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+
+.exerciseId{
+	position:relative;
+	color: #354B60;
+	font-size: 1.2em;
+	line-height: 1.8em;
+	width: 90%;
+	margin-left:120px;
+	text-align: center;
+}
+.exerciseId h3{
+	text-transform: uppercase;
+}
+.exerciseId .desc,.exercise .desc, .profile .desc{
+	font-weight: bold;
+	text-align:left;
+}
+.exercisesView{
+	padding-left:20px;
+}
+.img-fileUpload-thumbnail{
+	cursor: pointer;
+}
+.imageExercise .imgPrev, .exercise .imgPrev{
+	text-align: center;
+}
+/*Modal*/
+.modal-prev{
+	width:100%;
+	height:100%;
+}
+/*Rutine*/
+#title-routine{
+	text-align: center;
+	text-decoration: underline;
+	text-transform:uppercase;
+	color: #7C25F8;
+	margin-left:auto;
+}
+div.panel-warning,div.panel-danger{
+	/*position:relative;*/
+	margin-left:auto;
+	text-align: center;
+}
+div.fb-like{
+	float:right;
+}
+div.panel-danger{
+	margin-top:60px;
+}
+/*Profile*/
+.profile ul{
+	list-style: none;
+}
+.profile h3{
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 2em;
+	color: #1ABC9C;
+}
+.photo{
+	/*margin-right: 15px;
+	float:right;*/
+	width: 140px;
+	height: 140px;
+}
+/*Chat*/
+#chat h2{
+	text-decoration: underline;
+}
+#chat h2, #insertMessage{
+	color: #1ABC9C;
+	font-weight: bold;
+}
+input#message{
+	border-radius: 8px;
+}
+
+#input .date{
+	font-size: 0.9em;
+	color: grey;
+	opacity:0.5;
+	
+}
+
+/*.title-rutine-item-b{
+	text-align: center;
+}*/

@@ -152,7 +152,7 @@ WorkoutSchema = new SimpleSchema({
 
 Messages.allow({
   insert: function(userId, doc) {
-    return !!userId
+    return !!userId;
   }
 });
 

@@ -26,6 +26,9 @@ Template.soloWorkout.helpers({
 	},
 	picworkout: function(){
 		return PicWorkout.findOne(this._id);
+	}, 
+	nombre: ()=>{
+		return Session.get('imageName');
 	}
 });
 
@@ -47,6 +50,17 @@ Template.soloWorkout.events({
 	//Con reactive var hay que pasar evento y template
 	'click .fa-pencil' :function(event,template){
 		template.editMode.set(!template.editMode.get());
+	},
+	'click .imgPrev': function(event,cosa){
+		var name= cosa.$(event.target).data('modalNombre');
+		//console.log('te tocao');
+		Session.set('imageName',name);
+	},
+
+	'click .closepreview, click .close': function(){
+		
+		Session.set('imageName',null);
 	}
+
 
 });
