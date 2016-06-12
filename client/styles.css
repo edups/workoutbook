@@ -10,6 +10,7 @@ body {
   padding-top: 50px;
   background: #eee;
   margin-bottom: 40px;
+  font-family: 'Nunito', sans-serif;
 }
 /* HEADER */
 /*Nav-bar*/
@@ -92,22 +93,28 @@ footer{
 	position:fixed;
 	bottom:0;
 	text-align:center;
-	list-style:none;
 	z-index: 7;
+	
 	
 }
 footer ul li{
-	list-style: none;
+	padding-top:10px;
+	list-style:none;
 }
-/*Home Layout*/
 
+/*Home Layout*/
+@media(min-width:768px){
+	.billboard{
+		height: 50vw;
+	}
+}
 .billboard {
-	/*background: #1ABC9C;*/
 	background: url("/images/pexels-photo.jpg");
 	background-size: cover;
 	color: #fff;
 	text-align: center;
 	min-height:250px;
+	/*font-family: 'Nunito', sans-serif;*/
 }
 .billboard .jumbotron{
 	margin-top:60px;
@@ -163,6 +170,16 @@ footer ul li{
 }
 .sect3 i{
 	padding:20px;
+}
+
+.sect3 .fa-facebook-official{
+	color:#3B5998;
+}
+.sect3 .fa-twitter{
+	color:#55ACEE;
+}
+.sect3 .fa-google-plus{
+	color:#DC4E41;
 }
 
 /* Side Nav */
@@ -246,7 +263,8 @@ footer ul li{
 	transition: all 0.3s ease;
 	border: solid 3px #D0EFDA;
 }
-.btn:hover,button:hover,.autoform-remove-item.btn:hover,.autoform-add-item.btn:hover, .new-workout:hover{
+.btn:hover,button:hover,.autoform-remove-item.btn:hover,.autoform-add-item.btn:hover, .new-workout:hover,
+.btn:focus,button:focus,.autoform-remove-item.btn:focus,.autoform-add-item.btn:focus, .new-workout:focus{
 	/*background: #5ab0b0;*/
 	color:#fff;
 	background: #1DB954;
@@ -260,6 +278,7 @@ button[type="submit"],.new-workout{
 }
 /* LIst of workouts */
 .solo-work,.rutine-item,.profile,.exerciseId{
+	font-size:1.0em;
 	width:90%;
 	margin: 20px auto;
 	background: #fff;
@@ -328,7 +347,7 @@ button[type="submit"],.new-workout{
 	border-bottom: rgba(0,0,0,0.3) solid 3px;
 }
 .solo-work .exercise,.rutine-item .exercise{
-	font-size: 1.0em;
+	font-size: 1.2em;
 }
 
 .solo-work:hover, .rutine-item:hover,.profile:hover, .exerciseId:hover{
@@ -342,7 +361,7 @@ button[type="submit"],.new-workout{
 	font-size: 1.2em;
 	line-height: 1.8em;
 	width: 90%;
-	margin-left:120px;
+	/*margin-left:120px;*/
 	text-align: center;
 }
 .exerciseId h3{
@@ -371,7 +390,7 @@ button[type="submit"],.new-workout{
 	text-align: center;
 	text-decoration: underline;
 	text-transform:uppercase;
-	color: #7C25F8;
+	color: #1ABC9C;
 	margin-left:auto;
 }
 div.panel-warning,div.panel-danger{
@@ -410,7 +429,7 @@ div.panel-danger{
 	font-weight: bold;
 }
 input#message{
-	border-radius: 8px;
+	border-radius: 4px;
 }
 
 #input .date{
@@ -418,6 +437,16 @@ input#message{
 	color: grey;
 	opacity:0.5;
 	
+}
+div.send{
+	width:0%;
+	color: white;
+	background:#1ABC9C;
+}
+div.send:hover{
+	cursor:pointer;
+	color: #1ABC9C;
+	background:white;
 }
 
 /*.title-rutine-item-b{

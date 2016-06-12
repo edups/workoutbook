@@ -89,7 +89,7 @@ WorkoutSchema = new SimpleSchema({
       if (Meteor.user().username)
              return Meteor.user().username;
           else
-            return Meteor.user().emails[0].address;
+            return Meteor.user().profile.name;
     },
     autoform:{
       type: "hidden"
@@ -121,14 +121,18 @@ Meteor.methods({
 			$set:{
 				inRutine: !currentState
 			}
-
 		})
-			
+   //  if(!currentState)
+			// Bert.alert( 'Added to rutine!', 'success', 'growl-top-right','fa-thumbs-o-up' );
+   //  else
+   //     Bert.alert( 'Removed from rutine!', 'warning', 'growl-top-right','fa-thumbs-o-up' );
+    
+
 	},
 	deleteWorkout:function(id){
    // check(Meteor.userId(), String);
 		Workouts.remove(id);
-		Bert.alert( '¡ Deleted!', 'success', 'growl-top-right','fa-thumbs-o-up' );
+		Bert.alert( 'Deleted!', 'danger', 'growl-top-right','fa-thumbs-o-up' );
 	}
 });
 

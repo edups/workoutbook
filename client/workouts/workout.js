@@ -5,7 +5,6 @@ Template.soloWorkout.onCreated(function(){
 		});
 });
 
-
 //REactive vars
 Template.soloWorkout.onCreated(function(){
 	this.editMode =  new ReactiveVar(false);

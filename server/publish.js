@@ -26,8 +26,8 @@ Meteor.publish('message',function(){
 
 
     var T = new TwitMaker({
-        consumer_key:         'FDMP43dVNuOjGo70Sedx7MCGI', // API key
-        consumer_secret:      'aWU0FRGTRbZsHPekne1zSFL5VkawZIKVpOJjHvrjv9eVuD65E9', // API secret
+        consumer_key:         'FDMP43dVNuOjGo70Sedx7MCGI', 
+        consumer_secret:      'aWU0FRGTRbZsHPekne1zSFL5VkawZIKVpOJjHvrjv9eVuD65E9',
         access_token:         '2614033568-9S7c8j9zGDLQnE2GT7GZwxS2ExbZYdEQv4wNWyY', 
         access_token_secret:  'yHfQJ9YG0X82dJRIITITAAQX7x7Rm4FGMJmf73AWOnkw4'
     });

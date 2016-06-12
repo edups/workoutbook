@@ -23,7 +23,6 @@ Template.messages.helpers({
           // else
           //   var name = Meteor.user().services.google.email;
             var message = document.getElementById('message');
-            console.log(message);
           if (message.value != '') {
             Messages.insert({
               name: name,
@@ -35,7 +34,26 @@ Template.messages.helpers({
             message.value = '';
           }
         }
-      }
+      },
+      'click .fa-paper-plane': function(event){
+         if (Meteor.user().username)
+             var name = Meteor.user().username;
+          else
+           var name = Meteor.user().profile.name;
+            var message = document.getElementById('message');
+          if (message.value != '') {
+            Messages.insert({
+              name: name,
+              message: message.value,
+              time: new Date(),
+            });
+
+            document.getElementById('message').value = '';
+            message.value = '';
+          }
+    
+    
+  }
    });
   
 
