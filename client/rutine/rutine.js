@@ -29,7 +29,7 @@ Template.rutineItem.helpers({
 Template.rutineItem.events({
 	'click .imgPrev': function(event,cosa){
 		var name= cosa.$(event.target).data('modalNombre');
-		//console.log('te tocao');
+		//console.log('Test touch funciona');
 		Session.set('imageName',name);
 	},
 

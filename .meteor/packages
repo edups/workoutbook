@@ -19,9 +19,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 kadira:flow-router
 kadira:blaze-layout
 erasaur:meteor-lodash
-#stolinski:stylus-multi
 twbs:bootstrap
-#materialize:materialize
 fortawesome:fontawesome
 spiderable
 fastclick
@@ -34,7 +32,6 @@ matb33:bootstrap-glyphicons
 zimme:active-route
 gwendall:auth-client-callbacks
 meteortoys:allthings
-#datariot:ganalytics
 check
 sacha:spin
 reactive-var
@@ -49,11 +46,9 @@ themeteorchef:bert
 cfs:filesystem  #Este es de test para la subida de imagenes,da fallo en subidas no locales
 cfs:standard-packages
 cfs:gridfs
-
 yogiben:autoform-file
 
 mrt:facebook-sdk #SDK facebook
 mrt:twit
-
 
 audit-argument-checks

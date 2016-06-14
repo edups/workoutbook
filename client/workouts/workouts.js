@@ -1,5 +1,3 @@
-//Meteor.subscribe('workouts');
-
 Template.workouts.onCreated(function(){
 	var vm = this;
 	vm.autorun(function(){
@@ -18,7 +16,6 @@ Template.workouts.helpers({
 		return Workouts.find({});
 	}
 	
-
 });
 
 Template.workouts.events({
